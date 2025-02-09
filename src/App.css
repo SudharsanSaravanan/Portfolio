@@ -1,7 +1,7 @@
 /* Base styles and variables */
 :root {
   --primary-color: #ff69b4;
-  --secondary-color: #ffb700;
+  --secondary-color: #00ffd0;
   --text-color: #333;
   --background-color: #fff;
   --transition: all 0.3s ease;
@@ -108,6 +108,14 @@ body {
 .nav-link.active::after {
   width: 100%;
 }
+
+.menu-toggle {
+  display: none;
+  font-size: 1.5rem;
+  cursor: pointer;
+}
+
+
 
 /* Hero Section */
 .hero-section {
@@ -541,6 +549,7 @@ textarea {
 }
 
 @media (max-width: 480px) {
+
   .nav-links {
     gap: 0.5rem;
   }

@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import Typewriter from 'typewriter-effect';
 import './App.css';
+import HeroImg from "./profile.jpg";
 
 function App() {
   const [activeSection, setActiveSection] = useState('home');
@@ -83,13 +84,13 @@ function App() {
                 View My Work →
               </button>
               <a href="/resume.pdf" download className="cta-button secondary">
-                Download Resume
+                Resume
               </a>
             </div>
           </div>
           <div className="hero-image">
             <div className="image-placeholder">
-              <img src="your-photo.jpg" alt="Your Name" />
+              <img src={HeroImg} alt="sudharsan" />
             </div>
           </div>
         </div>
