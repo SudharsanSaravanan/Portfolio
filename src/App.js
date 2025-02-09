@@ -57,25 +57,25 @@ function App() {
         <div className="container">
           <div className="hero-content">
             <h1 className="typewriter-container" style={{ fontSize: "3rem", fontWeight: "bold", display: "flex" }}>
-                {!showText ? (
+              {!showText ? (
                 <Typewriter
-                options={{
-                  strings: ["Hi, I'm Sudharsan"],
-                  autoStart: true,
-                  delay: 75,
-                  cursor: "|",
-                  loop: false, // Ensure looping is disabled
-                  deleteSpeed: Infinity, // Prevents deleting
-                }}
-                onInit={(typewriter) => {
-                  typewriter.callFunction(() => setShowText(true)).start();
-                }}
+                  options={{
+                    strings: ["Hi, I'm Sudharsan"],
+                    autoStart: true,
+                    delay: 75,
+                    cursor: "|",
+                    loop: false,
+                    deleteSpeed: Infinity,
+                  }}
+                  onInit={(typewriter) => {
+                    typewriter.callFunction(() => setShowText(true)).start();
+                  }}
                 />
-                ) : (
+              ) : (
                 <span className="typed-text">
                   Hi, I'm Sudharsan<span className="blinking">|</span>
                 </span>
-                )}
+              )}
             </h1>
             <p className="title">Frontend Developer</p>
             <p className="subtitle">Building beautiful web experiences</p>
@@ -83,7 +83,7 @@ function App() {
               <button className="cta-button" onClick={() => handleNavClick('projects')}>
                 View My Work →
               </button>
-              <a href="/resume.pdf" download className="cta-button secondary">
+              <a href={require("./resume.pdf")} target="_blank" rel="noopener noreferrer" className="cta-button secondary">
                 Resume
               </a>
             </div>
@@ -104,18 +104,18 @@ function App() {
             <div className="about-text">
               <p>I'm a passionate frontend developer with a strong focus on creating intuitive and engaging user interfaces. With expertise in React and modern web technologies, I transform ideas into seamless digital experiences.</p>
               
-              <div className="skills-card">
-                <h3>Programming Languages & Frameworks</h3>
-                <div className="skills-grid">
-                  <img src="https://skillicons.dev/icons?i=c,cpp,py,java,firebase,vercel,js,html,css,react,nodejs,mysql,flask,tailwind,express,nodejs,materialui,haskell,eclipse,vscode,powershell" alt="programming" />
-                  {/* Add more skills as needed */}
+              <div className="skills-container">
+                <div className="skills-card">
+                  <h3>Programming Languages & Frameworks</h3>
+                  <div className="skills-grid">
+                    <img src="https://skillicons.dev/icons?i=c,cpp,py,java,firebase,vercel,js,html,css,react,nodejs,mysql,flask,tailwind,express,nodejs,materialui,haskell,eclipse,vscode,powershell" alt="programming" />
+                  </div>
                 </div>
-              </div>
-              <div className="skills-card">
-                <h3>Tools and Technologies</h3>
-                <div className="skills-grid">
-                  <img src="https://skillicons.dev/icons?i=git,github,linux,ubuntu,matlab,bootstrap" alt="React" />
-                  {/* Add more skills as needed */}
+                <div className="skills-card">
+                  <h3>Tools and Technologies</h3>
+                  <div className="skills-grid">
+                    <img src="https://skillicons.dev/icons?i=git,github,linux,ubuntu,matlab,bootstrap" alt="React" />
+                  </div>
                 </div>
               </div>
 
@@ -127,7 +127,7 @@ function App() {
                   <p className="year">2023 - 2027</p>
                   <p className="gpa">CGPA: 7.5/10</p>
                 </div>
-                  <div className="education-card">
+                <div className="education-card">
                   <h4>High School</h4>
                   <p className="school">Stanes School ICSE, CBE</p>
                   <p className="year">2016 - 2023</p>
@@ -192,10 +192,15 @@ function App() {
         <div className="container">
           <h2>Resume</h2>
           <div className="resume-content">
-            <p>Download my resume to learn more about my experience and skills.</p>
-            <a href="/resume.pdf" download className="download-button">
-              Download Resume PDF
-            </a>
+          <p>View or download my resume to learn more about my experience and skills.</p>
+          <a 
+           href={require("./resume.pdf")} 
+           target="_blank" 
+           rel="noopener noreferrer" 
+           className="download-button"
+          >
+            View Resume PDF
+          </a>
           </div>
         </div>
       </section>

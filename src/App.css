@@ -109,14 +109,6 @@ body {
   width: 100%;
 }
 
-.menu-toggle {
-  display: none;
-  font-size: 1.5rem;
-  cursor: pointer;
-}
-
-
-
 /* Hero Section */
 .hero-section {
   min-height: 100vh;
@@ -204,11 +196,18 @@ body {
   gap: 2rem;
 }
 
+/* Updated Skills Container for side-by-side cards */
+.skills-container {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 2rem;
+  margin: 2rem 0;
+}
+
 .skills-card {
   background: rgba(255, 255, 255, 0.05);
   border-radius: 15px;
   padding: 2rem;
-  margin: 2rem 0;
   box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
 }
 
@@ -219,26 +218,9 @@ body {
   margin-top: 1.5rem;
 }
 
-.skill-item {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  text-align: center;
-}
-
-.skill-item img {
-  width: 40px;
-  height: 40px;
-  margin-bottom: 0.5rem;
-}
-
-.skill-tag {
-  padding: 0.5rem 1rem;
-  background: rgba(255, 105, 180, 0.1);
-  border-radius: 20px;
-  font-size: 0.9rem;
-  margin: 0.5rem;
-  display: inline-block;
+.skills-grid img {
+  width: 100%;
+  height: auto;
 }
 
 /* Education Section */
@@ -460,7 +442,7 @@ textarea {
   border-radius: 50%;
   overflow: hidden;
   position: relative;
-  border: 8px solid rgba(255, 255, 255, 0.3);
+  border: 0px solid rgba(255, 255, 255, 0.3);
   box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
 }
 
@@ -495,7 +477,23 @@ textarea {
   }
 }
 
-/* Responsive Design */
+/* Typewriter effect */
+.typed-text {
+  font-size: 3rem;
+  font-weight: bold;
+}
+
+.blinking {
+  animation: blink 1s infinite;
+}
+
+@keyframes blink {
+  50% {
+    opacity: 0;
+  }
+}
+
+/* Updated Mobile Responsive Styles */
 @media (max-width: 1024px) {
   .image-placeholder {
     width: 300px;
@@ -505,6 +503,10 @@ textarea {
   .hero-content {
     max-width: 60%;
   }
+
+  .hero-section .container {
+    gap: 5rem;
+  }
 }
 
 @media (max-width: 768px) {
@@ -513,12 +515,29 @@ textarea {
   }
 
   .nav-links {
-    gap: 1rem;
+    position: fixed;
+    top: 70px;
+    left: 0;
+    right: 0;
+    background: var(--background-color);
+    padding: 1rem;
+    flex-wrap: wrap;
+    justify-content: center;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  }
+
+  .dark-theme .nav-links {
+    background: rgba(26, 26, 26, 0.95);
+  }
+
+  .nav-link {
+    padding: 0.5rem 1rem;
   }
 
   .hero-section .container {
     flex-direction: column;
     text-align: center;
+    gap: 3rem;
   }
 
   .hero-content {
@@ -537,6 +556,10 @@ textarea {
     justify-content: center;
   }
 
+  .skills-container {
+    grid-template-columns: 1fr;
+  }
+
   .projects-grid {
     grid-template-columns: 1fr;
   }
@@ -549,7 +572,6 @@ textarea {
 }
 
 @media (max-width: 480px) {
-
   .nav-links {
     gap: 0.5rem;
   }
@@ -570,19 +592,8 @@ textarea {
   .container {
     padding: 0 1rem;
   }
-}
 
-.typed-text {
-  font-size: 3rem;
-  font-weight: bold;
-}
-
-.blinking {
-  animation: blink 1s infinite;
-}
-
-@keyframes blink {
-  50% {
-    opacity: 0;
+  .skills-grid img {
+    width: 100%;
   }
 }
