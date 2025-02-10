@@ -204,12 +204,31 @@ body {
   gap: 2rem;
 }
 
+/* Skills Section */
+.skills-container {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  /* Two cards side by side */
+  gap: 2rem;
+  margin-top: 2rem;
+}
+
 .skills-card {
   background: rgba(255, 255, 255, 0.05);
   border-radius: 15px;
   padding: 2rem;
-  margin: 2rem 0;
   box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  /* Ensure content doesn't overflow */
+  height: auto;
+  /* Adjust height as needed */
+  min-height: 300px;
+  /* Set a minimum height to ensure consistency */
+}
+
+.skills-card h3 {
+  margin-bottom: 1.5rem;
+  color: var(--primary-color);
 }
 
 .skills-grid {
@@ -217,6 +236,16 @@ body {
   grid-template-columns: repeat(auto-fit, minmax(80px, 1fr));
   gap: 1.5rem;
   margin-top: 1.5rem;
+  overflow: hidden;
+  /* Ensure images don't overflow */
+}
+
+.skills-grid img {
+  width: 100%;
+  height: auto;
+  max-width: 300px;
+  max-height: 300px;
+  object-fit: contain;
 }
 
 .skill-item {
@@ -325,7 +354,17 @@ body {
 
 .project-image {
   height: 200px;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   background: #f0f0f0;
+}
+
+.project-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
 }
 
 .project-content {
