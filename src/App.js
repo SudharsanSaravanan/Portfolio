@@ -80,8 +80,8 @@ function App() {
                 </span>
               )}
             </h1>
-            <p className="title">Frontend Developer</p>
-            <p className="subtitle">Building beautiful web experiences</p>
+            <p className="title">Software Engineer</p>
+            <p className="subtitle">Crafting seamless digital experiences through code and creativity</p>
             <div className="cta-buttons">
               <button className="cta-button" onClick={() => handleNavClick('projects')}>
                 View My Work →
