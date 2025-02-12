@@ -183,12 +183,11 @@ body {
 
 .cta-button.secondary {
   background: transparent;
-  border: 2px solid rgba(0, 0, 0, 0.675);
-  color: rgb(0, 0, 0, 0.675);
+  border: 2px solid var(--primary-color);
+  color: var(--primary-color);
 }
 
 .cta-button.secondary:hover {
-  border: 2px solid var(--primary-color);
   background: var(--primary-color);
   color: white;
 }
