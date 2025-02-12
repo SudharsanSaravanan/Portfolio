@@ -1,7 +1,7 @@
 /* Base styles and variables */
 :root {
   --primary-color: #ff69b4;
-  --secondary-color: #00ffd0;
+  --secondary-color: #8800ff;
   --text-color: #333;
   --background-color: #fff;
   --transition: all 0.3s ease;
@@ -183,11 +183,12 @@ body {
 
 .cta-button.secondary {
   background: transparent;
-  border: 2px solid var(--primary-color);
-  color: var(--primary-color);
+  border: 2px solid rgba(0, 0, 0, 0.675);
+  color: rgb(0, 0, 0, 0.675);
 }
 
 .cta-button.secondary:hover {
+  border: 2px solid var(--primary-color);
   background: var(--primary-color);
   color: white;
 }

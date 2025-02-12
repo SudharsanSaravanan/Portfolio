@@ -111,7 +111,7 @@ function App() {
   <div className="skills-card">
     <h3>Programming Languages & Frameworks</h3>
     <div className="skills-grid">
-      <img src="https://skillicons.dev/icons?i=c,cpp,py,java,firebase,vercel,js,html,css,react,nodejs,mysql,nodejs,materialui,haskell,eclipse,vscode,powershell&perline=6" alt="programming" />
+      <img src="https://skillicons.dev/icons?i=c,cpp,py,java,firebase,vercel,js,html,css,react,nodejs,mysql,materialui,haskell,electron,redux,eclipse,vscode,powershell&perline=6" alt="programming" />
     </div>
   </div>
   <div className="skills-card">
