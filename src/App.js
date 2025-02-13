@@ -80,7 +80,7 @@ function App() {
                 </span>
               )}
             </h1>
-            <p className="title">Software Engineer</p>
+            <p className="title">Aspiring Software Engineer</p>
             <p className="subtitle">Crafting seamless digital experiences through code and creativity</p>
             <div className="cta-buttons">
               <button className="cta-button" onClick={() => handleNavClick('projects')}>
