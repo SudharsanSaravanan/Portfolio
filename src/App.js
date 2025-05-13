@@ -150,10 +150,6 @@ function App() {
     document.body.classList.toggle('dark-theme');
   };
 
-  const toggleNav = () => {
-    setIsNavOpen(!isNavOpen);
-  };
-
   return (
     <div className={`app ${isDarkMode ? 'dark-theme' : ''}`}>
       {/* Sidebar/Navigation */}
@@ -193,9 +189,6 @@ function App() {
       {/* Main Content */}
       <main className="main-content">
         <div className="mobile-header">
-          <button className="menu-toggle" onClick={toggleNav}>
-            <i className={`fas ${isNavOpen ? 'fa-times' : 'fa-bars'}`}></i>
-          </button>
           <div className="mobile-logo">
             <span>✧ Sudharsana Saravanan S ✧</span>
           </div>
