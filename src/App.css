@@ -2,6 +2,131 @@
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap');
 @import url('https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css');
 
+/* Add these changes to the existing App.css file, replacing or adding to the relevant sections */
+
+/* Global Styles */
+html {
+  scroll-behavior: smooth;
+  -webkit-overflow-scrolling: touch; /* Improve touch scrolling on iOS */
+  touch-action: manipulation; /* Prevent double-tap zoom and improve touch responsiveness */
+}
+
+body {
+  font-family: 'Montserrat', sans-serif;
+  background-color: var(--background);
+  color: var(--text-primary);
+  transition: background-color var(--transition-speed), color var(--transition-speed);
+  line-height: 1.6;
+  overflow-x: hidden;
+  overscroll-behavior: none; /* Prevent pull-to-refresh from interfering with scrolling */
+  -webkit-overflow-scrolling: touch; /* Ensure smooth scrolling on mobile */
+}
+
+/* Fix mobile sidebar to prevent scroll interference */
+.sidebar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: var(--sidebar-width);
+  height: 100vh;
+  background-color: var(--sidebar-bg);
+  padding: 20px 0;
+  display: flex;
+  flex-direction: column;
+  z-index: 100;
+  transition: transform var(--transition-speed) ease-in-out;
+  overflow-y: auto;
+  -webkit-overflow-scrolling: touch; /* Smooth scrolling inside sidebar */
+  touch-action: pan-y; /* Allow vertical scrolling in sidebar */
+}
+
+/* Mobile Sidebar */
+@media (max-width: 992px) {
+  .sidebar {
+    transform: translateX(-100%);
+    box-shadow: 2px 0 10px rgba(0, 0, 0, 0.3);
+  }
+  
+  .sidebar.open {
+    transform: translateX(0);
+    overscroll-behavior: contain; /* Prevent scroll chaining to body */
+  }
+}
+
+/* Main Content Area */
+.main-content {
+  flex: 1;
+  margin-left: var(--sidebar-width);
+  transition: margin var(--transition-speed);
+  min-height: 100vh;
+  -webkit-overflow-scrolling: touch; /* Smooth scrolling for main content */
+  touch-action: pan-y; /* Ensure vertical scrolling is prioritized */
+}
+
+@media (max-width: 992px) {
+  .main-content {
+    margin-left: 0;
+  }
+
+  /* Disable scrolling on main content when sidebar is open */
+  .sidebar.open ~ .main-content {
+    overflow: hidden;
+    height: 100vh; /* Prevent scrolling */
+    position: fixed;
+    width: 100%;
+    touch-action: none; /* Disable touch interactions when sidebar is open */
+  }
+}
+
+/* Ensure content wrapper scrolls smoothly */
+.content-wrapper {
+  min-height: 100%;
+  padding-bottom: 0px;
+  -webkit-overflow-scrolling: touch;
+}
+
+/* Fix potential overflow issues */
+html, body {
+  width: 100%;
+  overflow-x: hidden;
+  height: 100%; /* Ensure full height for proper scrolling */
+}
+
+/* Blur effect when mobile menu is open */
+.sidebar.open ~ .main-content {
+  filter: blur(2px);
+  pointer-events: none; /* Prevent interactions with main content when sidebar is open */
+}
+
+/* Ensure sections are scrollable */
+.section {
+  padding: 80px 0;
+  position: relative;
+  -webkit-overflow-scrolling: touch;
+}
+
+/* Improve touch scrolling for hero section */
+.hero-section {
+  position: relative;
+  min-height: 100vh;
+  padding: 100px 0;
+  display: flex;
+  align-items: center;
+  overflow: hidden;
+  touch-action: pan-y; /* Allow vertical scrolling */
+}
+
+/* Ensure smooth scrolling for all scrollable containers */
+.container,
+.projects-grid,
+.skills-grid,
+.education-cards,
+.timeline,
+.contact-content {
+  -webkit-overflow-scrolling: touch;
+  touch-action: pan-y;
+}
+
 /* ------------- Base Styles & Variables ------------- */
 :root {
   /* Spotify Colors */
@@ -418,6 +543,14 @@ img {
   .spotify-button {
     padding: 12px 24px;
     font-size: 14px;
+  }
+}
+
+@media (max-width: 576px) {
+  .hero-buttons .spotify-button {
+    padding: 10px 20px; /* Reduced padding for smaller buttons */
+    font-size: 14px; /* Smaller font size */
+    gap: 6px; /* Slightly reduced gap between text and icon */
   }
 }
 
