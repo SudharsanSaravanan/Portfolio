@@ -214,7 +214,7 @@ function App() {
                 <p className="hero-description">Crafting seamless digital experiences through code and creativity</p>
                 <div className="hero-buttons">
                   <button className="spotify-button primary" onClick={() => handleNavClick('projects')}>
-                    View My Work <i className="fas fa-headphones"></i>
+                    View My Work <i className="fas fa-code"></i>
                   </button>
                   <a href={require("./resume.pdf")} target="_blank" rel="noopener noreferrer" className="spotify-button secondary">
                     Resume <i className="fas fa-file-alt"></i>
@@ -406,14 +406,10 @@ function App() {
                 transition={{ duration: 0.5 }}
                 className="section-title"
               >
-                Projects
+                <i className="fas fa-project-diagram"></i> Top Projects
               </motion.h2>
 
               <div className="projects-playlist">
-                <h3 className="playlist-title">
-                  <i className="fas fa-code"></i> Top Projects
-                </h3>
-
                 <div className="projects-grid">
                   {projects.map((project, index) => (
                     <motion.div
@@ -427,11 +423,6 @@ function App() {
                         <div className="project-card">
                           <div className="project-image">
                             <img src={project.image} alt={project.title} />
-                            <div className="project-overlay">
-                              <button className="play-button">
-                                <i className="fas fa-play"></i>
-                              </button>
-                            </div>
                           </div>
                           <div className="project-content">
                             <h3>{project.title}</h3>
