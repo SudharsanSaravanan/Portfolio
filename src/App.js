@@ -331,7 +331,7 @@ function App() {
                         <h4>Bachelor of Technology in Computer Science</h4>
                         <p className="school">Amrita Vishwa Vidyapeetham</p>
                         <p className="year">2023 - 2027</p>
-                        <p className="gpa">CGPA: 7.5/10</p>
+                        <p className="gpa">CGPA: 7.68/10</p>
                       </div>
                     </div>
 
